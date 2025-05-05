@@ -325,7 +325,7 @@ def computeColumnSemantics(input_table, subject_index, LABEL_DICT, TYPE_DICT, CL
                                    
 if __name__ == "__main__":
     which_benchmark = 0
-    while which_benchmark != 1 and which_benchmark != 2 and which_benchmark != 3:
+    while which_benchmark != 1 and which_benchmark != 2 and which_benchmark != 3: #交互
       print("Press 1 for TUS Benchmark, 2 for SANTOS (small) benchmark and 3 for SANTOS (large) benchmark.")
       which_benchmark = int(input())
     map_k = 20
@@ -370,12 +370,12 @@ if __name__ == "__main__":
     SYNTH_TYPE_INVERTED_INDEX_PATH = r"../hashmap/" + current_benchmark + "_synth_type_inverted_index."+pickle_extension
     SYNTH_RELATION_INVERTED_INDEX_PATH = r"../hashmap/" + current_benchmark + "_synth_relation_inverted_index."+pickle_extension
     
-    # MAP_PATH = r"../stats/" + current_benchmark + "_benchmark_result_by_santos_"+current_mode+".csv"
-    # FINAL_RESULT_PICKLE_PATH = r"../stats/" + current_benchmark + "_benchmark_result_by_santos_"+current_mode+".pickle"
+    MAP_PATH = r"../stats/" + current_benchmark + "_benchmark_result_by_santos_"+current_mode+".csv"
+    FINAL_RESULT_PICKLE_PATH = r"../stats/" + current_benchmark + "_benchmark_result_by_santos_"+current_mode+".pickle"
     
-    # TRUE_RESULTS_PATH = r"../stats/" + current_benchmark + "_benchmark_true_result_by_santos_"+current_mode+".csv"
-    # FALSE_RESULTS_PATH = r"../stats/" + current_benchmark + "_benchmark_false_result_by_santos_"+current_mode+".csv"
-    # QUERY_TIME_PATH = r"../stats/" + current_benchmark + "_benchmark_query_time_by_santos_"+current_mode+".csv"
+    TRUE_RESULTS_PATH = r"../stats/" + current_benchmark + "_benchmark_true_result_by_santos_"+current_mode+".csv"
+    FALSE_RESULTS_PATH = r"../stats/" + current_benchmark + "_benchmark_false_result_by_santos_"+current_mode+".csv"
+    QUERY_TIME_PATH = r"../stats/" + current_benchmark + "_benchmark_query_time_by_santos_"+current_mode+".csv"
     
     #load pickle files to the dictionary variables
     yago_loading_start_time = time.time()
