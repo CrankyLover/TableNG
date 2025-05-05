@@ -1,0 +1,224 @@
+{
+  "training": [
+    {
+      "id": "7e5e",
+      "postList": [
+        "abandoned_wells_a.csv",
+        "track",
+        "rf",
+        "classification"
+      ],
+      "command": "python abandoned_wells_a.csv --model rf --target \"track\" --task classification"
+    }
+  ],
+  "progress": [
+    {
+      "type": "query",
+      "epoch": 1,
+      "total_epoch": 10,
+      "batch": 1,
+      "total_batch": 100,
+      "progress": 10,
+      "metrics": {
+        "loss": 0.5,
+        "acc": 0.7,
+        "pre": 0.68,
+        "rec": 0.65,
+        "f1": 0.66
+      },
+      "confusion_matrix": [
+        [
+          40,
+          10
+        ],
+        [
+          8,
+          42
+        ]
+      ],
+      "id": "109c"
+    },
+    {
+      "type": "augmented",
+      "epoch": 1,
+      "total_epoch": 10,
+      "batch": 1,
+      "total_batch": 100,
+      "progress": 10,
+      "metrics": {
+        "loss": 0.6,
+        "acc": 0.68,
+        "pre": 0.65,
+        "rec": 0.62,
+        "f1": 0.63
+      },
+      "confusion_matrix": [
+        [
+          38,
+          12
+        ],
+        [
+          9,
+          41
+        ]
+      ],
+      "id": "605e"
+    },
+    {
+      "type": "query",
+      "epoch": 3,
+      "total_epoch": 10,
+      "batch": 20,
+      "total_batch": 100,
+      "progress": 30,
+      "metrics": {
+        "loss": 0.4,
+        "acc": 0.75,
+        "pre": 0.72,
+        "rec": 0.7,
+        "f1": 0.71
+      },
+      "confusion_matrix": [
+        [
+          45,
+          8
+        ],
+        [
+          6,
+          48
+        ]
+      ],
+      "id": "6ba8"
+    },
+    {
+      "type": "augmented",
+      "epoch": 3,
+      "total_epoch": 10,
+      "batch": 20,
+      "total_batch": 100,
+      "progress": 30,
+      "metrics": {
+        "loss": 0.5,
+        "acc": 0.72,
+        "pre": 0.7,
+        "rec": 0.67,
+        "f1": 0.68
+      },
+      "confusion_matrix": [
+        [
+          42,
+          10
+        ],
+        [
+          8,
+          45
+        ]
+      ],
+      "id": "f7cc"
+    },
+    {
+      "type": "query",
+      "epoch": 6,
+      "total_epoch": 10,
+      "batch": 60,
+      "total_batch": 100,
+      "progress": 60,
+      "metrics": {
+        "loss": 0.3,
+        "acc": 0.82,
+        "pre": 0.8,
+        "rec": 0.78,
+        "f1": 0.79
+      },
+      "confusion_matrix": [
+        [
+          50,
+          5
+        ],
+        [
+          4,
+          55
+        ]
+      ],
+      "id": "38b6"
+    },
+    {
+      "type": "augmented",
+      "epoch": 6,
+      "total_epoch": 10,
+      "batch": 60,
+      "total_batch": 100,
+      "progress": 60,
+      "metrics": {
+        "loss": 0.35,
+        "acc": 0.79,
+        "pre": 0.76,
+        "rec": 0.74,
+        "f1": 0.75
+      },
+      "confusion_matrix": [
+        [
+          47,
+          6
+        ],
+        [
+          5,
+          50
+        ]
+      ],
+      "id": "f2ab"
+    },
+    {
+      "type": "query",
+      "epoch": 10,
+      "total_epoch": 10,
+      "batch": 100,
+      "total_batch": 100,
+      "progress": 100,
+      "metrics": {
+        "loss": 0.2,
+        "acc": 0.9,
+        "pre": 0.88,
+        "rec": 0.87,
+        "f1": 0.875
+      },
+      "confusion_matrix": [
+        [
+          55,
+          3
+        ],
+        [
+          2,
+          60
+        ]
+      ],
+      "id": "6552"
+    },
+    {
+      "type": "augmented",
+      "epoch": 10,
+      "total_epoch": 10,
+      "batch": 100,
+      "total_batch": 100,
+      "progress": 100,
+      "metrics": {
+        "loss": 0.25,
+        "acc": 0.88,
+        "pre": 0.85,
+        "rec": 0.84,
+        "f1": 0.845
+      },
+      "confusion_matrix": [
+        [
+          52,
+          4
+        ],
+        [
+          3,
+          55
+        ]
+      ],
+      "id": "4069"
+    }
+  ]
+}
