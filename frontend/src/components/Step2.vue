@@ -1,5 +1,9 @@
 <template>
-  <div class="container">
+  <!-- ✅ 首屏加载提示 -->
+  <div v-if="loadingQueries" class="loading-tip">
+    后台正在运行中，请稍后…
+  </div>
+  <div v-else class="container">
     <h2 class="page-title">索引 CSV 文件预览</h2>
 
     <!-- 表头选择器 -->
@@ -47,19 +51,23 @@
 <script setup>
 import { reactive, ref, onMounted, inject } from 'vue'
 import Papa from 'papaparse'
+import axios from 'axios'
 
-const csvFileList = [
-  '../../benchmark/santos_benchmark/query/albums_a.csv',
-  '../../benchmark/santos_benchmark/query/animal_tag_data_a.csv',
-  '../../benchmark/santos_benchmark/query/311_calls_historic_data_a.csv',
-  '../../benchmark/santos_benchmark/query/ipopayments_a.csv',
-]
+// const csvFileList = [
+//   '../../benchmark/santos_benchmark/query/albums_a.csv',
+//   '../../benchmark/santos_benchmark/query/animal_tag_data_a.csv',
+//   '../../benchmark/santos_benchmark/query/311_calls_historic_data_a.csv',
+//   '../../benchmark/santos_benchmark/query/ipopayments_a.csv',
+// ]
+
+const csvFileList = ref([])
 
 const tableList = reactive([])
 const allHeaders = reactive([])
 const globalState = inject('globalState')
 const setSelectedHeader = inject('setSelectedHeader')
 const selectedHeaderRef = ref(globalState.value.selectedHeader)
+const loadingQueries = ref(true)
 
 // 修改选择时调用
 const handleSelect = (value) => {
@@ -72,7 +80,15 @@ onMounted(() => {
 })
 
 async function loadCsvFiles() {
-  for (const path of csvFileList) {
+  try{
+    const { data } = await axios.get('http://localhost:3001/listing')
+    csvFileList.value = data.map(item =>  `../../benchmark/santos_benchmark/datalake/${item}`)
+  } catch (error) {
+    console.error('发送请求失败:', error)
+  } finally{
+    loadingQueries.value = false
+  }
+  for (const path of csvFileList.value) {
     const name = path.split('/').pop()
     tableList.push({
       name,
@@ -203,5 +219,12 @@ function toggleTable(index) {
 }
 .header-bold {
   font-weight: bold;
+}
+.loading-tip {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 80px 0;
+  color: #666;
 }
 </style>
